@@ -1,20 +1,18 @@
-function changeTodo(position, newValue) {
-  todos[position] = newValue;
-  displayTodos();
-}
- 
-function deleteTodo(position) {
-  todos.splice(position, 1);
-  displayTodos();
-}
- 
-function addTodo(todo) {
-    todos.push(todo);
-    displayTodos();
-}
- 
-function displayTodos() {
-    console.log('My todos:', todos);
-}
- 
-var todos = ['item 1', 'item 2', 'item 3'];
+var todoList = {
+  todos: ['item 1', 'item 2', 'item 3'],
+  displayTodos: function() {
+    console.log('My Todos', this.todos);
+  },
+  addTodo: function(todo) {
+    this.todos.push(todo);  // use the todos in this object as not available outside
+    this.displayTodos(); // use the method displayTodos
+  },
+  changeTodo: function(position, newValue) {
+    this.todos[position] = newValue;  // use the todos in this object
+    this.displayTodos();  // use the method displayTodos
+  },
+  deleteTodo: function(position) {
+    this.todos.splice(position, 1);  // use the todos in this object
+    this.displayTodos();  // use the method displayTodos
+  }
+};
