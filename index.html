@@ -1,18 +1,35 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title>To do List</title>
+    <link id="favicon" rel="icon" href="https://hyperdev.com/favicon.ico" type="image/x-icon">
+  </head>
+  <body>
+    <h1>Todo List</h1>
 
-  <head>
-    <link rel="stylesheet" href="style.css">
-    
-  </head>
+    <div>
+      <button onclick="handlers.toggleAll()">Toggle All</button>
+    </div>
+    
+    <div>
+      <button onclick="handlers.addTodo()">Add</button>
+      <input id="addTodoTextInput" type="text">
+    </div>
+    
+    <div>
+      <button onclick="handlers.changeTodo()">Change Todo</button>
+      <input id="changeTodoPositionInput" type="number">
+      <input id="changeTodoTextInput" type="text">
+    </div>
+    
+    <div>
+      <button onclick="handlers.toggleCompleted()">Toggle Completed</button>
+      <input id="toggleCompletedPositionInput" type="number">
+    </div>
+    
+    <ul>       
+    </ul>
 
-  <body>
-    <h1>Todo List</h1>
-    
-    <button id="displayTodosButton">Display Todos</button>
-    <button id="toggleAllButton">Toggle All</button>
-    
-    <script src="script.js"></script>
-  </body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
